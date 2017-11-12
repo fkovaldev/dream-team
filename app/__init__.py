@@ -25,5 +25,8 @@ def create_app(config_name):
     def hello_world():
         return 'Hello, World!'
 
+    login_manager.init_app(app)
+    login_manager.login_message = "You must be logged in to access this page."
+    login_manager.login_view = "auth.login"
 
     return app
