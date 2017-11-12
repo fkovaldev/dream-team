@@ -11,6 +11,8 @@ from config import app_config
 db = SQLAlchemy()
 
 def create_app(config_name):
+    print("XXX config_name:{0}".format(config_name))
+    print("XXX __name__:{0}".format(__name__))
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_object(app_config[config_name])
     app.config.from_pyfile('config.py')
